@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getBMI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBMIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getBMIResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="myHealth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="weight" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="myHealthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="myHealthResult" type="tns:BMI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="BMI">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="bmi" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="risk" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="riskColor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="externalLink" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getBMISoapIn">
+    <wsdl:part name="parameters" element="tns:getBMI" />
+  </wsdl:message>
+  <wsdl:message name="getBMISoapOut">
+    <wsdl:part name="parameters" element="tns:getBMIResponse" />
+  </wsdl:message>
+  <wsdl:message name="myHealthSoapIn">
+    <wsdl:part name="parameters" element="tns:myHealth" />
+  </wsdl:message>
+  <wsdl:message name="myHealthSoapOut">
+    <wsdl:part name="parameters" element="tns:myHealthResponse" />
+  </wsdl:message>
+  <wsdl:portType name="soap_BMISoap">
+    <wsdl:operation name="getBMI">
+      <wsdl:input message="tns:getBMISoapIn" />
+      <wsdl:output message="tns:getBMISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="myHealth">
+      <wsdl:input message="tns:myHealthSoapIn" />
+      <wsdl:output message="tns:myHealthSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="soap_BMISoap" type="tns:soap_BMISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getBMI">
+      <soap:operation soapAction="http://tempuri.org/getBMI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="myHealth">
+      <soap:operation soapAction="http://tempuri.org/myHealth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="soap_BMISoap12" type="tns:soap_BMISoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getBMI">
+      <soap12:operation soapAction="http://tempuri.org/getBMI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="myHealth">
+      <soap12:operation soapAction="http://tempuri.org/myHealth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="soap_BMI">
+    <wsdl:port name="soap_BMISoap" binding="tns:soap_BMISoap">
+      <soap:address location="https://localhost:44305/soap_BMI.asmx" />
+    </wsdl:port>
+    <wsdl:port name="soap_BMISoap12" binding="tns:soap_BMISoap12">
+      <soap12:address location="https://localhost:44305/soap_BMI.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

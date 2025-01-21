@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35514.174
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOAP_BMI", "SOAP_BMI.csproj", "{49D8F9AC-E6F8-4C68-9613-725E5EA3BF3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTFUL_BMI", "..\RESTFUL_BMI\RESTFUL_BMI.csproj", "{29E0BF52-CC0B-434A-BDDF-9A067E97E9A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49D8F9AC-E6F8-4C68-9613-725E5EA3BF3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D8F9AC-E6F8-4C68-9613-725E5EA3BF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D8F9AC-E6F8-4C68-9613-725E5EA3BF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D8F9AC-E6F8-4C68-9613-725E5EA3BF3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29E0BF52-CC0B-434A-BDDF-9A067E97E9A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29E0BF52-CC0B-434A-BDDF-9A067E97E9A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29E0BF52-CC0B-434A-BDDF-9A067E97E9A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29E0BF52-CC0B-434A-BDDF-9A067E97E9A8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
