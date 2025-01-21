@@ -1,0 +1,49 @@
+# Ignore the build output directories
+bin/
+obj/
+
+# User-specific files
+.vs/
+.vscode/
+.idea/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# User-specific JetBrains Rider files
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# .NET Core / .NET SDK / .NET CLI files
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Local History for Visual Studio (used for storing local history of changes)
+.vs2019/
+.vs2017/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Ignore JetBrains Rider settings
+.idea/
+
+# Ignore Rider specific files
+.idea/
+
+# Ignore temporary files
+Thumbs.db
+ehthumbs.db
